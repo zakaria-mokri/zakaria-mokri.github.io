@@ -82,7 +82,7 @@ export const portfolioData = {
   ],
 
   socials: [
-    { label: "GitHub", href: "https://github.com/****", icon: "github" },
+    { label: "GitHub", href: "https://github.com/zakaria-mokri", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/zakaria-al-mokri/", icon: "linkedin" },
     { label: "Email", href: "mailto:almokrizakaria@gmail.com", icon: "mail" },
   ] as SocialLink[],
