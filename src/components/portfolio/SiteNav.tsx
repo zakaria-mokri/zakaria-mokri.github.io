@@ -4,6 +4,7 @@ import { Download, Menu, X, Sparkles } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 import { cn } from "@/lib/utils";
 import { ResumeModal } from "./ResumeModal";
+import { ThemeToggle } from "./ThemeToggle"; // Import the toggle component
 
 
 const NAV_OFFSET = 96;
@@ -217,6 +218,10 @@ export function SiteNav() {
             </span>
             Open to Roles
           </span>
+          
+          {/* Theme Toggle Button added right here */}
+          <ThemeToggle />
+
           <button
             onClick={() => setResumeOpen(true)}
             className="hidden items-center gap-2 rounded-xl border border-border px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 sm:inline-flex"
@@ -279,13 +284,19 @@ export function SiteNav() {
                 );
               })}
             </ul>
-            <div className="mt-2 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-3 py-2 font-mono text-[10px] tracking-wide text-emerald-300 uppercase">
-              <span className="relative grid size-2 place-items-center">
-                <span className="absolute size-2 animate-ping rounded-full bg-emerald-400/70" />
-                <span className="size-2 rounded-full bg-emerald-400" />
-              </span>
-              Open to Roles
+            <div className="mt-2 flex items-center justify-between">
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-3 py-2 font-mono text-[10px] tracking-wide text-emerald-300 uppercase">
+                <span className="relative grid size-2 place-items-center">
+                  <span className="absolute size-2 animate-ping rounded-full bg-emerald-400/70" />
+                  <span className="size-2 rounded-full bg-emerald-400" />
+                </span>
+                Open to Roles
+              </div>
+              
+              {/* Also available in mobile menu header */}
+              <ThemeToggle />
             </div>
+
             <div className="mt-2 grid grid-cols-2 gap-2">
               <button
                 onClick={() => {
@@ -312,5 +323,4 @@ export function SiteNav() {
       <AnimatePresence>{resumeOpen && <ResumeModal onClose={() => setResumeOpen(false)} />}</AnimatePresence>
     </header>
   );
-
 }
